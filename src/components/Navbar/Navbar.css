@@ -1,0 +1,111 @@
+.navbar {
+  background-color: #1f5156;
+  height: 60px; /* Reduced height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1500px;
+  padding: 0 20px;
+}
+
+.nav-logo {
+  color: #f5b921;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.8rem; /* Reduced font size */
+}
+
+.nav-logo .icon {
+  width: 1.8rem; /* Adjusted icon size */
+  height: 1.8rem; /* Adjusted icon size */
+  margin-left: 10px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.nav-item {
+  margin: 0 1rem;
+}
+
+.nav-links {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links:hover {
+  color: #ffdd40;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.nav-links.active {
+  color: #ffdd40;
+  border-bottom: 2px solid #ffdd40;
+}
+
+.nav-icon {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 960px) {
+  .nav-menu {
+      flex-direction: column;
+      position: absolute;
+      top: 60px; /* Adjusted top position to match the new navbar height */
+      left: -110%;
+      width: 100%;
+      height: calc(100vh - 60px); /* Adjusted height calculation */
+      background: #1f5156;
+      opacity: 0;
+      transition: all 0.5s ease;
+  }
+
+  .nav-menu.active {
+      left: 0;
+      opacity: 1;
+      z-index: 1;
+  }
+
+  .nav-item {
+      width: 100%;
+      text-align: center;
+      margin: 0;
+  }
+
+  .nav-links {
+      display: block;
+      width: 100%;
+      padding: 1.5rem;
+  }
+
+  .nav-icon {
+      display: block;
+      color: #ffdd40;
+      font-size: 1.8rem;
+  }
+
+  .nav-logo .icon {
+      width: 1.8rem;
+      height: 1.8rem;
+  }
+}
